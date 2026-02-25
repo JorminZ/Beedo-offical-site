@@ -67,9 +67,11 @@ function App() {
                 FAQ
               </button>
             </div>
-            <Button className="hidden sm:block bg-teal-600 hover:bg-zinc-700 text-white h-9 px-4">
-              Get Beedo Free
-            </Button>
+            <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+              <Button className="hidden sm:block bg-teal-600 hover:bg-zinc-700 text-white h-9 px-4">
+                Get Beedo Free
+              </Button>
+            </a>
           </div>
         </div>
       </nav>
@@ -105,9 +107,11 @@ function App() {
                 We search, score, tailor, and apply, so you don't have to.
               </p>
             </div>
-            <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4">
-              Try the Beta for Free
-            </Button>
+            <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4">
+                Try the Beta for Free
+              </Button>
+            </a>
           </div>
 
           {/* Hero Image */}
@@ -161,9 +165,11 @@ function App() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4 w-fit">
-                      Try Beta for free
-                    </Button>
+                    <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4 w-fit">
+                        Try Beta for free
+                      </Button>
+                    </a>
                   </div>
                 </div>
                 
@@ -476,22 +482,24 @@ function App() {
           <div className="flex flex-col sm:flex-row items-start justify-between gap-8 sm:gap-0">
             <div className="text-zinc-700 w-full sm:w-[445.89px]">
               <h3 className="font-semibold text-2xl tracking-[-0.6px] leading-[30px] mb-4">
-                Exclusive Beta Coming Q3 2025
+                Exclusive Beta Coming 2026
               </h3>
               <p className="font-normal text-sm leading-5">
                 Be among the first to try Beedo and help shape the future of job searching.
               </p>
             </div>
-            <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4">
-              Get Beedo for Free
-            </Button>
+            <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4">
+                Get Beedo for Free
+              </Button>
+            </a>
           </div>
         </div>
 
         <div className="border-t border-dashed border-white/10 max-w-[1500px] mx-auto px-10 sm:px-20 py-8">
           <div className="flex items-center justify-between">
             <p className="text-zinc-700 text-xs leading-[18px]">
-              © 2025 Beedo. All rights reserved.
+              © 2026 Beedo. All rights reserved.
             </p>
             <button 
               onClick={scrollToTop}

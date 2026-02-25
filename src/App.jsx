@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Home, Brain, PencilLine, Send, CheckSquare, Plus, HelpCircle, Target, Database, Globe, FileText, Bot, Shield, Mail, Linkedin } from "lucide-react"
 
-// Beedo Logo 图片路径
-const BeedoLogo = "/logo.png"
+const base = import.meta.env.BASE_URL
+const BeedoLogo = base + "logo2.svg"
 
 function App() {
   // FAQ 展开状态管理
@@ -40,9 +40,9 @@ function App() {
           {/* Logo */}
           <button 
             onClick={scrollToTop}
-            className="bg-zinc-700 hover:bg-zinc-600 rounded-lg p-2 w-9 h-9 flex items-center justify-center transition-colors duration-200 cursor-pointer"
+            className="rounded-lg flex items-center justify-center transition-colors duration-200 cursor-pointer"
           >
-            <div className="h-[26px] w-[26px]">
+            <div className="h-[44px] w-[44px]">
               <img 
                 src={BeedoLogo}
                 alt="Beedo Logo"
@@ -79,7 +79,7 @@ function App() {
         {/* 左侧装饰图片 - 按照 Figma 精确位置 */}
         <div className="hidden sm:block absolute aspect-[319.056/855.908] bottom-[36.96px] xl:bottom-[-13.04px] left-[4.34%] right-[73.51%] pointer-events-none z-50">
           <img 
-            src="/hero1.svg"
+            src={base + "hero1.svg"}
             alt="左侧装饰图"
             className="w-full h-full object-contain"
           />
@@ -88,7 +88,7 @@ function App() {
         {/* 右侧装饰图片 - 按照 Figma 精确位置 */}
         <div className="hidden sm:block absolute aspect-[311.171/816.643] bottom-[42.72px] xl:bottom-[-7.28px] left-[74.1%] max-h-[1123.25px] right-[4.29%] pointer-events-none z-50">
           <img 
-            src="/hero2.svg"
+            src={base + "hero2.svg"}
             alt="右侧装饰图"
             className="w-full h-full object-contain"
           />
@@ -114,9 +114,9 @@ function App() {
           <div className="bg-teal-50 rounded-[12px] w-full aspect-[1040/639] flex items-center justify-center overflow-hidden pt-2.5 px-2.5 sm:pt-10 sm:px-10 lg:pt-20 lg:px-20">
             <div className="bg-white rounded-t-[12px] border-t border-l border-r border-teal-600/20 shadow-lg w-full h-full overflow-hidden">
               <img 
-                src="/hero img.png"
+                src={base + "hero img.png"}
                 alt="Beedo产品界面展示"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
@@ -156,7 +156,7 @@ function App() {
                     </h3>
                     <div className="hidden sm:block w-[180px] h-[180px] rounded-lg flex items-center justify-center overflow-hidden">
                       <img 
-                        src="/feature1.svg"
+                        src={base + "feature1.svg"}
                         alt="Job List装饰插画"
                         className="w-full h-full object-contain"
                       />
@@ -171,7 +171,7 @@ function App() {
                 <div className="flex-1 flex justify-end items-center pr-[200px]">
                   <div className="w-[455px] h-full flex items-center justify-center overflow-hidden rounded-r-[14px] shadow-[0px_4px_6px_-4px_rgba(16,24,40,0.1),0px_10px_15px_-3px_rgba(0,0,0,0.1)]">
                     <img 
-                      src="/feature img 1.png"
+                      src={base + "feature img 1.png"}
                       alt="Job List功能界面"
                       className="w-full h-full object-cover object-left block"
                     />
@@ -193,7 +193,7 @@ function App() {
                   </h3>
                   <div className="hidden sm:block w-[180px] h-[180px] bg-center bg-cover bg-no-repeat">
                     <img 
-                      src="/feature1.svg"
+                      src={base + "feature1.svg"}
                       alt="Job List装饰插画"
                       className="w-full h-full object-contain"
                     />
@@ -202,7 +202,7 @@ function App() {
                 <div className="flex-1 pl-6 sm:pl-10 xl:pl-[100px] pr-0">
                   <div className="w-full h-full rounded-tl-[12px] overflow-hidden shadow-[0px_4px_6px_-4px_rgba(16,24,40,0.1),0px_10px_15px_-3px_rgba(0,0,0,0.1)] border border-zinc-200 bg-white">
                     <img 
-                      src="/feature img 1.png"
+                      src={base + "feature img 1.png"}
                       alt="Job List功能界面"
                       className="w-full h-full object-cover object-left block rounded-tl-[12px]"
                     />
@@ -228,7 +228,7 @@ function App() {
                     </h3>
                     <div className="hidden sm:block w-[180px] h-[180px] bg-center bg-cover bg-no-repeat">
                       <img 
-                        src="/feature2.svg"
+                        src={base + "feature2.svg"}
                         alt="Database装饰插画"
                         className="w-full h-full object-contain"
                       />
@@ -237,7 +237,7 @@ function App() {
                   <div className="flex-1 pl-6 sm:pl-10 xl:pl-[100px] pr-0">
                     <div className="w-full h-full rounded-tl-[12px] overflow-hidden shadow-[0px_4px_6px_-4px_rgba(16,24,40,0.1),0px_10px_15px_-3px_rgba(0,0,0,0.1)] border border-zinc-200 bg-white">
                       <img 
-                        src="/feature img 2.png"
+                        src={base + "feature img 2.png"}
                         alt="Database功能界面"
                         className="w-full h-full object-cover object-left block rounded-tl-[12px]"
                       />
@@ -261,7 +261,7 @@ function App() {
                     </h3>
                     <div className="hidden sm:block w-[180px] h-[180px] bg-center bg-cover bg-no-repeat">
                       <img 
-                        src="/feature3.svg"
+                        src={base + "feature3.svg"}
                         alt="Resume Builder装饰插画"
                         className="w-full h-full object-contain"
                       />
@@ -270,7 +270,7 @@ function App() {
                   <div className="flex-1 pl-6 sm:pl-10 xl:pl-[100px] pr-0">
                     <div className="w-full h-full rounded-tl-[12px] overflow-hidden shadow-[0px_4px_6px_-4px_rgba(16,24,40,0.1),0px_10px_15px_-3px_rgba(0,0,0,0.1)] border border-zinc-200 bg-white">
                       <img 
-                        src="/feature img 3.png"
+                        src={base + "feature img 3.png"}
                         alt="Resume Builder功能界面"
                         className="w-full h-full object-cover object-left block rounded-tl-[12px]"
                       />
@@ -297,7 +297,7 @@ function App() {
                     </h3>
                     <div className="hidden sm:block w-[180px] h-[180px] bg-center bg-cover bg-no-repeat">
                       <img 
-                        src="/feature4.svg"
+                        src={base + "feature4.svg"}
                         alt="Beedo Apply装饰插画"
                         className="w-full h-full object-contain"
                       />
@@ -306,7 +306,7 @@ function App() {
                   <div className="flex-1 pl-6 sm:pl-10 xl:pl-[100px] pr-0">
                     <div className="w-full h-full rounded-tl-[12px] overflow-hidden shadow-[0px_4px_6px_-4px_rgba(16,24,40,0.1),0px_10px_15px_-3px_rgba(0,0,0,0.1)] border border-zinc-200 bg-white">
                       <img 
-                        src="/feature img 4.png"
+                        src={base + "feature img 4.png"}
                         alt="Beedo Apply功能界面"
                         className="w-full h-full object-cover object-left block rounded-tl-[12px]"
                       />
@@ -330,7 +330,7 @@ function App() {
                     </h3>
                     <div className="hidden sm:block w-[180px] h-[180px] bg-center bg-cover bg-no-repeat">
                       <img 
-                        src="/feature5.svg"
+                        src={base + "feature5.svg"}
                         alt="Tracking Sheet装饰插画"
                         className="w-full h-full object-contain"
                       />
@@ -339,7 +339,7 @@ function App() {
                   <div className="flex-1 pl-6 sm:pl-10 xl:pl-[100px] pr-0">
                     <div className="w-full h-full rounded-tl-[12px] overflow-hidden shadow-[0px_4px_6px_-4px_rgba(16,24,40,0.1),0px_10px_15px_-3px_rgba(0,0,0,0.1)] border border-zinc-200 bg-white">
                       <img 
-                        src="/feature img 5.png"
+                        src={base + "feature img 5.png"}
                         alt="Tracking Sheet功能界面"
                         className="w-full h-full object-cover object-left block rounded-tl-[12px]"
                       />
@@ -495,9 +495,9 @@ function App() {
             </p>
             <button 
               onClick={scrollToTop}
-              className="hidden sm:flex bg-zinc-700 hover:bg-zinc-600 rounded-lg p-2 w-9 h-9 items-center justify-center transition-colors duration-200 cursor-pointer"
+              className="hidden sm:flex rounded-lg items-center justify-center transition-colors duration-200 cursor-pointer"
             >
-              <div className="h-[26px] w-[26px]">
+              <div className="h-[44px] w-[44px]">
                 <img 
                   src={BeedoLogo}
                   alt="Beedo Logo"

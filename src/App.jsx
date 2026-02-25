@@ -1,17 +1,97 @@
 import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Home, Brain, PencilLine, Send, CheckSquare, Plus, HelpCircle, Target, Database, Globe, FileText, Bot, Shield, Mail, Linkedin } from "lucide-react"
+import { Home, Brain, PencilLine, Send, CheckSquare, Plus, HelpCircle, Target, Database, Globe, FileText, Bot, Shield, Mail, Linkedin, X, Monitor } from "lucide-react"
 
 const base = import.meta.env.BASE_URL
 const BeedoLogo = base + "logo2.svg"
+const CTA_URL = "https://d1a350dnkdlqb5.cloudfront.net/"
+
+function isMobileDevice() {
+  return window.matchMedia("(max-width: 768px)").matches ||
+    /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)
+}
+
+function MobileRedirectModal({ onClose }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(CTA_URL).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/50 backdrop-blur-sm px-5"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl p-8 w-full max-w-sm flex flex-col items-center gap-6 shadow-2xl relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-zinc-400 hover:text-zinc-700 transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        <div className="bg-teal-50 rounded-full p-4">
+          <Monitor className="w-8 h-8 text-teal-600" />
+        </div>
+
+        <div className="flex flex-col items-center gap-2 text-center">
+          <h2 className="font-semibold text-xl text-zinc-800 tracking-tight">
+            Best viewed on desktop
+          </h2>
+          <p className="text-sm text-zinc-500 leading-relaxed">
+            Beedo isn't available on mobile yet. Copy the link below and open it in a desktop browser for the full experience.
+          </p>
+        </div>
+
+        <div className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 flex items-center justify-between gap-3">
+          <span className="text-xs text-zinc-500 truncate flex-1 font-mono select-all">
+            {CTA_URL}
+          </span>
+          <button
+            onClick={handleCopy}
+            className={`text-xs font-semibold shrink-0 px-3 py-1.5 rounded-lg transition-all duration-200 ${
+              copied
+                ? "bg-teal-100 text-teal-700"
+                : "bg-teal-600 text-white hover:bg-teal-700"
+            }`}
+          >
+            {copied ? "Copied ✓" : "Copy"}
+          </button>
+        </div>
+
+        <button
+          onClick={onClose}
+          className="text-sm text-zinc-400 hover:text-zinc-600 transition-colors"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+  )
+}
 
 function App() {
   // FAQ 展开状态管理
   const [expandedFAQ, setExpandedFAQ] = useState(null)
+  const [showMobileModal, setShowMobileModal] = useState(false)
 
   const toggleFAQ = (index) => {
     setExpandedFAQ(expandedFAQ === index ? null : index)
+  }
+
+  const handleCTAClick = (e) => {
+    if (isMobileDevice()) {
+      e.preventDefault()
+      setShowMobileModal(true)
+    }
   }
 
   // 平滑滚动到指定部分
@@ -34,6 +114,7 @@ function App() {
   };
   return (
     <div className="bg-white min-h-screen w-full">
+      {showMobileModal && <MobileRedirectModal onClose={() => setShowMobileModal(false)} />}
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-zinc-200 w-full bg-white">
         <div className="w-full flex items-center justify-between px-10 sm:px-10 py-3">
@@ -67,7 +148,7 @@ function App() {
                 FAQ
               </button>
             </div>
-            <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
               <Button className="hidden sm:block bg-teal-600 hover:bg-zinc-700 text-white h-9 px-4">
                 Get Beedo Free
               </Button>
@@ -107,7 +188,7 @@ function App() {
                 We search, score, tailor, and apply, so you don't have to.
               </p>
             </div>
-            <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
               <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4">
                 Try the Beta for Free
               </Button>
@@ -165,7 +246,7 @@ function App() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+                    <a href={CTA_URL} target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
                       <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4 w-fit">
                         Try Beta for free
                       </Button>
@@ -488,7 +569,7 @@ function App() {
                 Be among the first to try Beedo and help shape the future of job searching.
               </p>
             </div>
-            <a href="https://d1a350dnkdlqb5.cloudfront.net/" target="_blank" rel="noopener noreferrer">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
               <Button className="bg-teal-600 hover:bg-zinc-700 text-white h-11 px-4">
                 Get Beedo for Free
               </Button>

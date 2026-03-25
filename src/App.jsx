@@ -5,7 +5,7 @@ import { Home, Brain, PencilLine, Send, CheckSquare, Plus, HelpCircle, Target, D
 
 const base = import.meta.env.BASE_URL
 const BeedoLogo = base + "logo2.svg"
-const CTA_URL = "https://d1a350dnkdlqb5.cloudfront.net/"
+const CTA_URL = "https://jobs.beedo.ai"
 
 function isMobileDevice() {
   return window.matchMedia("(max-width: 768px)").matches ||

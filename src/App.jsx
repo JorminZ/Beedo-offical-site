@@ -501,7 +501,7 @@ function App() {
               },
               {
                 question: "Will Beedo apply jobs for me?",
-                answer: "Yes. Beedo combines an AI agent with human assistants to complete applications for you. This way, every qualified role gets submitted on time and with the right materials.",
+                answer: "Yes — coming soon. Beedo's AI will handle the whole application for you, and double-check every one before it goes out.",
                 icon: Bot
               },
               {
@@ -595,12 +595,22 @@ function App() {
             </div>
             </button>
             <div className="flex items-center gap-4">
-              <button className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity">
+              <a
+                href="mailto:team@beedo.ai"
+                aria-label="Email team@beedo.ai"
+                className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity"
+              >
                 <Mail className="w-6 h-6 text-zinc-700" />
-              </button>
-              <button className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity">
+              </a>
+              <a
+                href="https://www.linkedin.com/company/beedo-ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Beedo AI on LinkedIn"
+                className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity"
+              >
                 <Linkedin className="w-6 h-6 text-zinc-700" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -196,12 +196,12 @@ function App() {
           </div>
 
           {/* Hero Image */}
-          <div className="bg-teal-50 rounded-[12px] w-full aspect-[1040/639] flex items-center justify-center overflow-hidden pt-2.5 px-2.5 sm:pt-10 sm:px-10 lg:pt-20 lg:px-20">
-            <div className="bg-white rounded-t-[12px] border-t border-l border-r border-teal-600/20 shadow-lg w-full h-full overflow-hidden">
+          <div className="bg-teal-50 rounded-[12px] w-full overflow-hidden pt-2.5 px-2.5 sm:pt-10 sm:px-10 lg:pt-20 lg:px-20">
+            <div className="bg-white rounded-t-[12px] border-t border-l border-r border-teal-600/20 shadow-lg w-full overflow-hidden">
               <img 
                 src={base + "hero img.png"}
                 alt="Beedo产品界面展示"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto block"
               />
             </div>
           </div>
